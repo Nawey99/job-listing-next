@@ -1,8 +1,5 @@
-import Dashboard from "@/components/Dashboard";
-import Image from "next/image";
+import SignupPage from "@/app/signup/page";
 
-export default function Home() {
-  return (
-    <Dashboard />
-  );
+export default function Signup() {
+  return <SignupPage />;
 }

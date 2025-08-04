@@ -1,99 +1,111 @@
-# 💼 Job Listing Dashboard
+# 🧳 Job Listing Dashboard
 
-A sleek and responsive **Next.js + Tailwind CSS** application for browsing and viewing job opportunities — powered by an external API.
+A simple **Next.js + Tailwind CSS** app that displays job opportunities in card format and allows users to view detailed job info, powered by data fetched from an external API.
 
 ---
 
 ## 🚀 Tech Stack
 
-* ⚛️ **Next.js** — React-based framework
-* 🔿 **TypeScript** — Static type checking
-* 🎨 **Tailwind CSS** — Utility-first CSS framework
-* 🌐 **Fetch API** — For client-side and server-side HTTP requests
+* **Next.js (App Router)**
+* **TypeScript**
+* **Tailwind CSS**
+* **NextAuth.js** for authentication
+* **External API Integration**
 
 ---
 
 ## 📸 Screenshots
 
-> Dashboard
-> ![Dashboard Page](image.png)
+### 🖥 Dashboard View
 
-> Job Detail Page
-> ![Job Detail Page](image-1.png)
+![Dashboard Screenshot](image.png)
+
+### 📝 Job Detail View
+
+![Job Detail Screenshot](image-1.png)
+
+### 🔐 Authentication Pages
+
+![Login Screenshot](image-2.png)
+![Signup Screenshot](image-3.png)
 
 ---
 
-## 🧪 Getting Started Locally
+## 🛠 Setup Instructions
 
-### 1⃣ Clone the Repository
+1. **Clone the repository**
 
 ```bash
-git clone https://github.com/Nawey99/job-listing-next
-cd job-listing-next
+git clone https://github.com/your-username/job-listing-dashboard.git
+cd job-listing-dashboard
 ```
 
-### 2⃣ Install Dependencies
+2. **Install dependencies**
 
 ```bash
 npm install
+# or
+yarn install
 ```
 
-### 3⃣ Start the Dev Server
+3. **Setup environment variables**
+
+Create a `.env.local` file:
+
+```env
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+```
+
+4. **Run the development server**
 
 ```bash
 npm run dev
 ```
 
-### 4⃣ Open the App
-
-Visit [http://localhost:3000](http://localhost:3000) in your browser
-
 ---
 
-## 🌐 Available Pages
+## 📁 Folder Structure Overview
 
-| Route        | Description                             |
-| ------------ | --------------------------------------- |
-| `/`          | Displays all job cards                  |
-| `/jobs/[id]` | Detailed view of a specific job listing |
-
----
-
-## 🗂 Folder Structure
-
-```
-job-listing-next/
-├── components/       # Reusable UI components
-│   ├── JobCard.tsx
-│   └── JobDetail.tsx
-├── pages/            # Next.js routing
-│   ├── index.tsx
-│   └── jobs/[id]/page.tsx
-├── public/           # Static assets (e.g., images, icons)
-├── next.config.js    # Next.js configuration
-└── ...
+```bash
+.
+├── app
+│   ├── dashboard
+│   │   └── page.tsx         # Protected dashboard page
+│   ├── login
+│   │   └── page.tsx         # Login route
+│   └── signup
+│       └── page.tsx         # Signup route
+├── components
+│   ├── Dashboard.tsx        # Dashboard listing logic
+│   ├── JobCard.tsx          # Job card UI
+│   └── LoginPage.tsx        # Login/signup shared UI
+├── public
+│   └── screenshots          # Place your screenshots here
+└── README.md
 ```
 
 ---
 
-## 📱 API Integration
+## 🔐 Authentication
 
-Data is fetched from the following public API:
-
-> 🔗 **Base URL**: `https://akil-backend.onrender.com/`
-
-### Endpoints:
-
-* `GET /opportunities/search` – Fetch all job listings
-* `GET /opportunities/:id` – Fetch a specific job by ID
-
-✅ Make sure:
-
-* The API is live and responsive.
-* You’ve configured `res.cloudinary.com` in `next.config.js` for image support.
+Authentication is handled using **NextAuth.js**. Users are redirected to `/login` if not authenticated when trying to access protected routes like `/dashboard`.
 
 ---
 
-## 📄 License
+## 📦 API Reference
 
-Licensed under the [MIT License](LICENSE).
+* `GET /opportunities/search`: Fetch all job listings
+* `GET /opportunities/:id`: Fetch a single job's detail
+
+---
+
+## 📬 Contributions
+
+Feel free to submit issues or pull requests. Any improvements are welcome!
+
+---
+
+## 📝 License
+
+MIT License
