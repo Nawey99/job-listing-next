@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    // be sure to include "cypress" as a type here
+    "types": ["cypress", "node"]
+  },
+  "include": [
+    // Include all files in the cypress folder
+    "**/*.ts"
+  ]
+}

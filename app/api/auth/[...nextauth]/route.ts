@@ -44,10 +44,11 @@ export const authOptions: AuthOptions = {
           }
 
           try {
+            // Note: Sending role directly without toUpperCase()
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/signup`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name, email, password, confirmPassword, role: role.toUpperCase() }),
+              body: JSON.stringify({ name, email, password, confirmPassword, role: role }),
             });
 
             let data;

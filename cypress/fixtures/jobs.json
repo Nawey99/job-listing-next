@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": "job-id-1",
+      "title": "Frontend Developer",
+      "description": "Develop amazing user interfaces.",
+      "orgName": "Future Systems",
+      "categories": ["IT", "Frontend"],
+      "opType": "Full-time",
+      "location": ["New York, NY"],
+      "logoUrl": "/placeholder.png"
+    },
+    {
+      "id": "job-id-2",
+      "title": "Backend Engineer",
+      "description": "Build robust and scalable APIs.",
+      "orgName": "Data Solutions",
+      "categories": ["IT", "Backend"],
+      "opType": "Contract",
+      "location": ["Remote"],
+      "logoUrl": "/placeholder.png"
+    }
+  ]
+}

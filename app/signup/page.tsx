@@ -12,7 +12,7 @@ export default function SignupPage() {
     email: "",
     password: "",
     confirmPassword: "",
-    role: "USER",
+    role: "user", // Changed to lowercase "user"
   });
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,9 @@ export default function SignupPage() {
       return false;
     }
     if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(form.password)) {
-      setError("Password must be at least 8 characters with uppercase, lowercase, and a number");
+      setError(
+        "Password must be at least 8 characters with uppercase, lowercase, and a number"
+      );
       return false;
     }
     if (form.password !== form.confirmPassword) {
@@ -86,7 +88,9 @@ export default function SignupPage() {
       router.push(`/verify-email?email=${encodeURIComponent(form.email)}`);
     } catch (error) {
       console.error("Signup catch error:", error);
-      setError(error instanceof Error ? error.message : "An unexpected error occurred");
+      setError(
+        error instanceof Error ? error.message : "An unexpected error occurred"
+      );
       setLoading(false);
     }
   };
@@ -102,11 +106,7 @@ export default function SignupPage() {
           className="w-full flex items-center justify-center border border-[#CCCCF5] rounded-md py-2 mb-4 hover:bg-gray-100 transition"
           onClick={() => signIn("google")}
         >
-          <img
-            src="/google-icon.svg"
-            alt="Google"
-            className="w-5 h-5 mr-2"
-          />
+          <img src="/google-icon.svg" alt="Google" className="w-5 h-5 mr-2" />
           <span className="text-sm font-bold text-[#4640DE]">
             Sign Up with Google
           </span>
@@ -114,7 +114,9 @@ export default function SignupPage() {
 
         <div className="flex items-center my-4">
           <hr className="flex-grow border-t border-gray-300" />
-          <span className="mx-4 text-gray-400 text-sm">Or Sign Up with Email</span>
+          <span className="mx-4 text-gray-400 text-sm">
+            Or Sign Up with Email
+          </span>
           <hr className="flex-grow border-t border-gray-300" />
         </div>
 
@@ -124,7 +126,9 @@ export default function SignupPage() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-500">Full Name</label>
+            <label className="block text-sm font-medium text-gray-500">
+              Full Name
+            </label>
             <input
               type="text"
               name="fullName"
@@ -137,7 +141,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-500">Email Address</label>
+            <label className="block text-sm font-medium text-gray-500">
+              Email Address
+            </label>
             <input
               type="email"
               name="email"
@@ -150,7 +156,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-500">Password</label>
+            <label className="block text-sm font-medium text-gray-500">
+              Password
+            </label>
             <input
               type="password"
               name="password"
@@ -163,7 +171,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-500">Confirm Password</label>
+            <label className="block text-sm font-medium text-gray-500">
+              Confirm Password
+            </label>
             <input
               type="password"
               name="confirmPassword"
@@ -186,15 +196,25 @@ export default function SignupPage() {
 
         <p className="text-sm text-gray-600 mt-4">
           Already have an account?{" "}
-          <Link href="/login" className="text-indigo-700 font-medium hover:underline">
+          <Link
+            href="/login"
+            className="text-indigo-700 font-medium hover:underline"
+          >
             Login
           </Link>
         </p>
 
         <p className="text-xs text-gray-400 mt-4">
-          By clicking &apos;Continue&apos;, you acknowledge that you have read and accepted our{" "}
-          <a href="#" className="text-indigo-700 hover:underline">Terms of Service</a> and{" "}
-          <a href="#" className="text-indigo-700 hover:underline">Privacy Policy</a>.
+          By clicking &apos;Continue&apos;, you acknowledge that you have read
+          and accepted our{" "}
+          <a href="#" className="text-indigo-700 hover:underline">
+            Terms of Service
+          </a>{" "}
+          and{" "}
+          <a href="#" className="text-indigo-700 hover:underline">
+            Privacy Policy
+          </a>
+          .
         </p>
       </div>
     </div>
